@@ -1,5 +1,7 @@
 package es.etg.dam.psp;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static final int ARCHIVO_ORIGEN = 0;
@@ -14,7 +16,7 @@ public class Main {
         byte[] msgDestino = FileUtil.leer(args[ARCHIVO_DESTINO]);
         byte[] hashDestino = UtilHash.generarHash(msgDestino);
 
-        if (UtilHash.comprobarHash(hashOrigen, hashDestino)) {
+        if (Arrays.equals(hashOrigen, hashDestino)) {
             System.out.println("Son iguales");
         }
 
