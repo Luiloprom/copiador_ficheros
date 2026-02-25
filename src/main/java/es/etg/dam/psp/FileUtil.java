@@ -5,12 +5,12 @@ import java.nio.file.Path;
 
 public class FileUtil {
 
-    public static byte[] leer(String ruta) throws Exception {
-        return Files.readAllBytes(Path.of(ruta));
+    public static byte[] leer(Path ruta) throws Exception {
+        return Files.readAllBytes(ruta);
     }
 
-    public static void escribir(byte[] contenido, String ruta) throws Exception {
-        Files.write(Path.of(ruta), contenido);
+    public static void escribir(byte[] contenido, Path ruta) throws Exception {
+        Files.write(ruta, contenido);
     }
 
 }
