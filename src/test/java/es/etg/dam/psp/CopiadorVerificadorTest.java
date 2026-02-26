@@ -10,15 +10,17 @@ import org.junit.jupiter.api.io.TempDir;
 public class CopiadorVerificadorTest {
 
     @Test
-    void copiaYVerifica_ok(@TempDir Path tempDir) throws Exception {
+    void copiarYVerificar(@TempDir Path tempDir) throws Exception {
         Path origen = tempDir.resolve("origen.txt");
         Path destino = tempDir.resolve("destino.txt");
 
         Files.writeString(origen, "Hola mundo");
 
-        boolean ok = CopiadorVerificador.copiarYVerificar(origen, destino);
+        CopiadorVerificador.copiarYVerificar(origen, destino);
 
-        assertTrue(ok);
+        String log = Files.readString(Path.of("copiar.log"));
+
+        assertTrue(log.contains("Son iguales"));
         assertTrue(Files.exists(destino));
     }
 }

@@ -1,1 +1,0 @@
-  /usr/bin/env /usr/lib/jvm/java-17-openjdk-amd64/bin/java -XX:+ShowCodeDetailsInExceptionMessages -cp /home/debian/Documents/copiador_ficheros/target/classes es.etg.dam.psp.Main entrada.txt salida.txt
